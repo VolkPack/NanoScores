@@ -2,4 +2,11 @@
 <resources>
     <color name="team1_name">@android:color/holo_blue_dark</color>
     <color name="team2_name">@android:color/holo_red_dark</color>
+    <color name="generic_text">@android:color/white</color>
+
+    <color name="kills">@android:color/holo_green_dark</color>
+    <color name="assits">@android:color/holo_orange_dark</color>
+    <color name="deaths">@android:color/holo_red_dark</color>
+
+    <color name="transperant">@android:color/transparent</color>
 </resources>

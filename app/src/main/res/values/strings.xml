@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">ScoreKeeper</string>
     <string name="score_string">Score</string>
-    <string name="team_one_name">Team One</string>
-    <string name="team_two_name">Team Two</string>
+    <string name="team_one_name">Fnatic</string>
+    <string name="team_two_name">myInstanity</string>
+    <string name="reset_button_string">Reset Scores</string>
+
+    <string name="kills">Kills</string>
+    <string name="forts">Forts</string>
+    <string name="deaths">Deaths</string>
+
+    <string name="default_score">0</string>
 </resources>

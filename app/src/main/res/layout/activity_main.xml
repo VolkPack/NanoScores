@@ -1,61 +1,382 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:orientation="horizontal"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/hots_bg_small"
+    android:id="@+id/main_layout"
     tools:context="com.example.nick.scorekeeper.MainActivity">
 
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/heroes_logo"
+        android:src="@drawable/logo_hots"
+        android:scaleType="fitCenter"
+        android:layout_above="@+id/reset_button" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="50"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:id="@+id/main_view_group">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/team1_name"
-            android:text="@string/team_one_name"
-            android:textAlignment="center"
-            android:textSize="25dp"
-            android:paddingBottom="10dp"
-            android:textColor="@color/team1_name"/>
-        <ImageView
-            android:id="@+id/team1_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            android:layout_gravity="center"
-            android:paddingBottom="10dp"/>
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:background="@drawable/border"
+            android:orientation="vertical"
+            android:id="@+id/team_one_view_group">
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/team1_logo"
+                android:layout_width="50dp"
+                android:paddingTop="10dp"
+                android:layout_height="50dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/fanatic_logo"
+                android:layout_gravity="center"
+                android:paddingBottom="10dp"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="50"
-        android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/team1_name"
+                android:textStyle="bold"
+                android:text="@string/team_one_name"
+                android:textAlignment="center"
+                android:textSize="25dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/team1_name"/>
 
-        <TextView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/score_desc_padding_bot"
+                android:id="@+id/score_desc">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:textAllCaps="true"
+                    android:textAlignment="center"
+                    android:id="@+id/kills_string"
+                    android:textStyle="bold"
+                    android:textColor="@color/generic_text"
+                    android:text="@string/kills"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    android:textColor="@color/generic_text"
+                    android:textAlignment="center"
+                    android:id="@+id/Forts_string"
+                    android:text="@string/forts"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/generic_text"
+                    android:textAllCaps="true"
+                    android:id="@+id/deaths_string"
+                    android:text="@string/deaths"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/score1_imgs">
+
+                <ImageView
+                    android:layout_width="51dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/kills1_img"
+                    android:layout_gravity="center"
+                    android:background="@drawable/icon_gradient"
+                    android:src="@drawable/kills2_img"
+                    android:layout_weight="2.86" />
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/Forts1_img"
+                    android:src="@drawable/forts_img"
+                    android:background="@drawable/icon_gradient"
+                    android:layout_weight="20"/>
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/deaths1_img"
+                    android:background="@drawable/icon_gradient"
+                    android:src="@drawable/death2_img"
+                    android:layout_weight="20"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/score1_view"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/kills1_score"
+                    android:textAlignment="center"
+                    android:textColor="@color/kills"
+                    android:textSize="35sp"
+                    android:layout_weight="50"
+                    android:text="@string/default_score"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/forst1_score"
+                    android:textAlignment="center"
+                    android:textColor="@color/assits"
+                    android:textSize="35sp"
+                    android:layout_weight="50"
+                    android:text="@string/default_score"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:id="@+id/deaths1_score"
+                    android:textColor="@color/deaths"
+                    android:textSize="35sp"
+                    android:layout_weight="50"
+                    android:text="@string/default_score"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/team1_score_buttons">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/kills1_button"
+                    android:src="@drawable/add_one"
+                    android:background="@color/transperant"
+                    android:layout_weight="50"
+                    android:onClick="addKillsTeamOne"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/forst1_button"
+                    android:background="@color/transperant"
+                    android:src="@drawable/add_one"
+                    android:layout_weight="50"
+                    android:onClick="addFortsTeamOne"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/deaths1_button"
+                    android:background="@color/transperant"
+                    android:src="@drawable/add_one"
+                    android:layout_weight="50"
+                    android:onClick="addDeathsTeamOne"/>
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/team2_name"
-            android:text="@string/team_two_name"
-            android:textAlignment="center"
-            android:textSize="25dp"
-            android:textColor="@color/team2_name"
-            android:paddingBottom="10dp"/>
-        <ImageView
-            android:id="@+id/team2_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            android:layout_gravity="center"
-            android:paddingBottom="10dp"/>
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:orientation="vertical"
+            android:background="@drawable/border"
+            android:id="@+id/team_two_view_group">
+
+            <ImageView
+                android:id="@+id/team2_logo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitCenter"
+                android:paddingTop="10dp"
+                android:src="@drawable/myinsanity_logo"
+
+                android:layout_gravity="center"
+                android:paddingBottom="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/team2_name"
+                android:textStyle="bold"
+                android:text="@string/team_two_name"
+                android:textAlignment="center"
+                android:textSize="25dp"
+                android:textColor="@color/team2_name"
+                android:paddingBottom="10dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/score_desc_padding_bot"
+                android:id="@+id/score2_desc">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:textAllCaps="true"
+                    android:textAlignment="center"
+                    android:id="@+id/kills2_string"
+                    android:textStyle="bold"
+                    android:textColor="@color/generic_text"
+                    android:text="@string/kills"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    android:textColor="@color/generic_text"
+                    android:textAlignment="center"
+                    android:id="@+id/Forts2_string"
+                    android:text="@string/forts"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/generic_text"
+                    android:textAllCaps="true"
+                    android:id="@+id/deaths2_string"
+                    android:text="@string/deaths"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/score2_imgs">
+
+                <ImageView
+                    android:layout_width="51dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/kills2_img"
+                    android:layout_gravity="center"
+                    android:src="@drawable/kills2_img"
+                    android:background="@drawable/icon_gradient"
+                    android:layout_weight="2.86" />
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/Forts2_img"
+                    android:src="@drawable/forts_img"
+                    android:layout_weight="20"
+                    android:background="@drawable/icon_gradient"/>
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/deaths3_img"
+                    android:src="@drawable/death2_img"
+                    android:layout_weight="20"
+                    android:background="@drawable/icon_gradient" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/score2_view"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/kills2_score"
+                    android:textAlignment="center"
+                    
+                    android:textColor="@color/kills"
+                    android:textSize="35sp"
+                    android:layout_weight="50"
+                    android:text="@string/default_score"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/forts2_score"
+                    android:textAlignment="center"
+                    android:textColor="@color/assits"
+                    android:textSize="35sp"
+                    android:layout_weight="50"
+                    android:text="@string/default_score"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:id="@+id/deaths2_score"
+                    android:textColor="@color/deaths"
+                    android:textSize="35sp"
+                    android:layout_weight="50"
+                    android:text="@string/default_score"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/team2_score_buttons">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/kills2_button"
+                    android:src="@drawable/add_one"
+                    android:background="@color/transperant"
+                    android:layout_weight="50"
+                    android:onClick="addKillsTeamTwo"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/forst2_button"
+                    android:background="@color/transperant"
+                    android:src="@drawable/add_one"
+                    android:layout_weight="50"
+                    android:onClick="addFortsTeamTwo"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/deaths2_button"
+                    android:background="@color/transperant"
+                    android:src="@drawable/add_one"
+                    android:layout_weight="50"
+                    android:onClick="addDeathsTeamTwo"/>
+            </LinearLayout>
+
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/reset_button"
+        android:background="@android:color/transparent"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/generic_text"
+        android:textStyle="bold"
+        android:text="@string/reset_button_string"
+        android:onClick="resetScores"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/info_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="infoPage"
+        android:src="@drawable/info_img"/>
+
+</RelativeLayout>
