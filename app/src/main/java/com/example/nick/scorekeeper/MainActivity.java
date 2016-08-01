@@ -1,11 +1,14 @@
 package com.example.nick.scorekeeper;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
+import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -41,6 +44,80 @@ public class MainActivity extends ActionBarActivity {
         deaths2_view.setText(Integer.toString(deaths2));
 
     }
+    public void addKillsTeamTwo(View view)
+    {
+        kills2 = kills2 + 1;
+        deaths1 = deaths1 + 1;
+        TextView kills2_view = (TextView) findViewById(R.id.kills2_score);
+        TextView deaths1_view = (TextView) findViewById(R.id.deaths1_score);
+        kills2_view.setText(Integer.toString(kills2));
+        deaths1_view.setText(Integer.toString(deaths1));
+
+    }
+    public void addFortsTeamOne(View view)
+    {
+        forts1 = forts1 + 1;
+        TextView forts1_view = (TextView) findViewById(R.id.forts1_score);
+        forts1_view.setText(Integer.toString(forts1));
+        if(forts1 == 7)
+        {
+            TextView victory_view = (TextView) findViewById(R.id.victory_string);
+            victory_view.setText(R.string.victory);
+            victory_view.setTextColor(getResources().getColor(R.color.team1_name));
+            lockButtons();
+        }
+    }
+
+    public void addFortsTeamTwo(View view)
+    {
+        forts2 = forts2 + 1;
+        TextView forts2_view = (TextView) findViewById(R.id.forts2_score);
+        forts2_view.setText(Integer.toString(forts2));
+        if(forts2 == 7)
+        {
+            TextView victory_view = (TextView) findViewById(R.id.victory_string);
+            victory_view.setText(R.string.victory);
+            victory_view.setTextColor(getResources().getColor(R.color.team2_name));
+            lockButtons();
+        }
+    }
+
+    public void lockButtons()
+    {
+        ImageButton kills1 = (ImageButton) findViewById(R.id.kills1_button);
+        ImageButton forts1 = (ImageButton) findViewById(R.id.forst1_button);
+        ImageButton deaths1 = (ImageButton) findViewById(R.id.deaths1_button);
+
+        ImageButton kills2 = (ImageButton) findViewById(R.id.kills2_button);
+        ImageButton forts2 = (ImageButton) findViewById(R.id.forst2_button);
+        ImageButton deaths2 = (ImageButton) findViewById(R.id.deaths2_button);
+
+        kills1.setClickable(false);
+        forts1.setClickable(false);
+        deaths1.setClickable(false);
+        kills2.setClickable(false);
+        forts2.setClickable(false);
+        deaths2.setClickable(false);
+    }
+
+    public void unlockButtons()
+    {
+        ImageButton kills1 = (ImageButton) findViewById(R.id.kills1_button);
+        ImageButton forts1 = (ImageButton) findViewById(R.id.forst1_button);
+        ImageButton deaths1 = (ImageButton) findViewById(R.id.deaths1_button);
+
+        ImageButton kills2 = (ImageButton) findViewById(R.id.kills2_button);
+        ImageButton forts2 = (ImageButton) findViewById(R.id.forst2_button);
+        ImageButton deaths2 = (ImageButton) findViewById(R.id.deaths2_button);
+
+        kills1.setClickable(true);
+        forts1.setClickable(true);
+        deaths1.setClickable(true);
+        kills2.setClickable(true);
+        forts2.setClickable(true);
+        deaths2.setClickable(true);
+    }
+
 
     public void resetScores(View view)
     {
@@ -52,11 +129,12 @@ public class MainActivity extends ActionBarActivity {
         deaths2 =0;
 
         TextView kills1_view = (TextView) findViewById(R.id.kills1_score);
-        TextView forts1_view = (TextView) findViewById(R.id.forst1_score);
+        TextView forts1_view = (TextView) findViewById(R.id.forts1_score);
         TextView deaths1_view = (TextView) findViewById(R.id.deaths1_score);
         TextView kills2_view = (TextView) findViewById(R.id.kills2_score);
         TextView forts2_view = (TextView) findViewById(R.id.forts2_score);
         TextView deaths2_view = (TextView) findViewById(R.id.deaths2_score);
+        TextView victory_view = (TextView) findViewById(R.id.victory_string);
 
         kills1_view.setText(Integer.toString(kills1));
         forts1_view.setText(Integer.toString(forts1));
@@ -64,6 +142,20 @@ public class MainActivity extends ActionBarActivity {
         kills2_view.setText(Integer.toString(kills2));
         forts2_view.setText(Integer.toString(forts2));
         deaths2_view.setText(Integer.toString(deaths2));
+        victory_view.setText("");
+
+        unlockButtons();
+    }
+
+    public void info(View view)
+    {
+        Context context = getApplicationContext();
+        String disclaimer = getString(R.string.disclaimer);
+        int duration = Toast.LENGTH_LONG;
+
+        Toast toast = Toast.makeText(context, disclaimer, duration);
+        toast.show();
+
     }
 
 }

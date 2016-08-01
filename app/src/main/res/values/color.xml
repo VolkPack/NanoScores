@@ -8,5 +8,5 @@
     <color name="assits">@android:color/holo_orange_dark</color>
     <color name="deaths">@android:color/holo_red_dark</color>
 
-    <color name="transperant">@android:color/transparent</color>
+    <color name="transperent">@android:color/transparent</color>
 </resources>

@@ -10,4 +10,7 @@
     <string name="deaths">Deaths</string>
 
     <string name="default_score">0</string>
+    <string name="victory">Victory</string>
+
+    <string name="disclaimer">All images are property of their respective owners and are used here for educational purposes.</string>
 </resources>

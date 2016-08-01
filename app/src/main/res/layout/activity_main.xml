@@ -141,7 +141,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/forst1_score"
+                    android:id="@+id/forts1_score"
                     android:textAlignment="center"
                     android:textColor="@color/assits"
                     android:textSize="35sp"
@@ -167,14 +167,14 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/kills1_button"
                     android:src="@drawable/add_one"
-                    android:background="@color/transperant"
+                    android:background="@color/transperent"
                     android:layout_weight="50"
                     android:onClick="addKillsTeamOne"/>
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/forst1_button"
-                    android:background="@color/transperant"
+                    android:background="@color/transperent"
                     android:src="@drawable/add_one"
                     android:layout_weight="50"
                     android:onClick="addFortsTeamOne"/>
@@ -182,10 +182,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/deaths1_button"
-                    android:background="@color/transperant"
+                    android:background="@color/transperent"
                     android:src="@drawable/add_one"
                     android:layout_weight="50"
-                    android:onClick="addDeathsTeamOne"/>
+                    android:onClick="addKillsTeamTwo"/>
             </LinearLayout>
 
 
@@ -336,14 +336,14 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/kills2_button"
                     android:src="@drawable/add_one"
-                    android:background="@color/transperant"
+                    android:background="@color/transperent"
                     android:layout_weight="50"
                     android:onClick="addKillsTeamTwo"/>
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/forst2_button"
-                    android:background="@color/transperant"
+                    android:background="@color/transperent"
                     android:src="@drawable/add_one"
                     android:layout_weight="50"
                     android:onClick="addFortsTeamTwo"/>
@@ -351,10 +351,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/deaths2_button"
-                    android:background="@color/transperant"
+                    android:background="@color/transperent"
                     android:src="@drawable/add_one"
                     android:layout_weight="50"
-                    android:onClick="addDeathsTeamTwo"/>
+                    android:onClick="addKillsTeamOne"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -376,7 +376,16 @@
         android:id="@+id/info_button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:onClick="infoPage"
+        android:onClick="info"
         android:src="@drawable/info_img"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/victory_string"
+        android:layout_below="@+id/main_view_group"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
 
 </RelativeLayout>
