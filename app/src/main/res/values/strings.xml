@@ -12,5 +12,8 @@
     <string name="default_score">0</string>
     <string name="victory">Victory</string>
 
-    <string name="disclaimer">All images are property of their respective owners and are used here for educational purposes.</string>
+    <string name="disclaimer">* All Imaages are properties of their respective owners.
+                                \n* "Heroes of the Storm" is property of Blizzard Entertainment.
+                                \n* All Images are used for educational purposes.</string>
+    <string name="disclaimer_activity_name">Disclaimer</string>
 </resources>

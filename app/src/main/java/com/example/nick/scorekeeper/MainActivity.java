@@ -1,11 +1,10 @@
 package com.example.nick.scorekeeper;
 
 import android.content.Context;
-import android.content.res.Resources;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,7 +32,11 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-
+    /**
+     * Adds Kills to TeamOne and Deaths to TeamTwo
+     * Updates the Views accordingly
+     * @param view
+     */
     public void addKillsTeamOne(View view)
     {
         kills1 = kills1 + 1;
@@ -44,6 +47,12 @@ public class MainActivity extends ActionBarActivity {
         deaths2_view.setText(Integer.toString(deaths2));
 
     }
+
+    /**
+     * Adds kills to TeamTwo and Deaths to TeamOne
+     * Updates Views accordingly
+     * @param view
+     */
     public void addKillsTeamTwo(View view)
     {
         kills2 = kills2 + 1;
@@ -54,6 +63,15 @@ public class MainActivity extends ActionBarActivity {
         deaths1_view.setText(Integer.toString(deaths1));
 
     }
+
+    /**
+     * Adds Forts kills to team One.
+     * Checks if number of Forts destroyed is 7
+     * if Number of Forts destoyed is 7
+     * displays Victory for TeamOne in Blue
+     * and locks buttons preventing further scoring.
+     * @param view
+     */
     public void addFortsTeamOne(View view)
     {
         forts1 = forts1 + 1;
@@ -68,6 +86,14 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
+    /**
+     * Adds Forts kills to team Two.
+     * Checks if number of Forts destroyed is 7
+     * if Number of Forts destoyed is 7
+     * displays Victory for TeamOne in Red
+     * and locks buttons preventing further scoring.
+     * @param view
+     */
     public void addFortsTeamTwo(View view)
     {
         forts2 = forts2 + 1;
@@ -82,6 +108,9 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
+    /**
+     * Locks Buttons preventing Using
+     */
     public void lockButtons()
     {
         ImageButton kills1 = (ImageButton) findViewById(R.id.kills1_button);
@@ -100,6 +129,9 @@ public class MainActivity extends ActionBarActivity {
         deaths2.setClickable(false);
     }
 
+    /**
+     * Unlocks score buttons allowing use
+     */
     public void unlockButtons()
     {
         ImageButton kills1 = (ImageButton) findViewById(R.id.kills1_button);
@@ -119,6 +151,12 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
+    /**
+     * Resets Kills, Deaths and Forts for Both Teams
+     * Unlocks Buttons
+     * Clears Victory From screen
+     * @param view
+     */
     public void resetScores(View view)
     {
         kills1 = 0;
@@ -147,15 +185,14 @@ public class MainActivity extends ActionBarActivity {
         unlockButtons();
     }
 
+    /**
+     * Links to disclaimer activity
+     * @param view
+     */
     public void info(View view)
     {
-        Context context = getApplicationContext();
-        String disclaimer = getString(R.string.disclaimer);
-        int duration = Toast.LENGTH_LONG;
-
-        Toast toast = Toast.makeText(context, disclaimer, duration);
-        toast.show();
-
+        Intent disclaimer = new Intent(MainActivity.this, Disclaimer.class);
+        MainActivity.this.startActivity(disclaimer);
     }
 
 }
