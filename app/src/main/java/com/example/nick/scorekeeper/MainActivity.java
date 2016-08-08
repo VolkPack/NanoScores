@@ -1,35 +1,26 @@
 package com.example.nick.scorekeeper;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
-    public int kills1 = 0;
-    public int forts1 = 0;
-    public int deaths1 =0;
-
-    public int kills2 = 0;
-    public int forts2 = 0;
-    public int deaths2 =0;
-
-
-
-
-
+    private int kills1 = 0;
+    private int forts1 = 0;
+    private int deaths1 =0;
+    private int kills2 = 0;
+    private int forts2 = 0;
+    private int deaths2 =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 
     /**
@@ -45,7 +36,6 @@ public class MainActivity extends ActionBarActivity {
         TextView deaths2_view = (TextView) findViewById(R.id.deaths2_score);
         kills1_view.setText(Integer.toString(kills1));
         deaths2_view.setText(Integer.toString(deaths2));
-
     }
 
     /**
@@ -61,7 +51,6 @@ public class MainActivity extends ActionBarActivity {
         TextView deaths1_view = (TextView) findViewById(R.id.deaths1_score);
         kills2_view.setText(Integer.toString(kills2));
         deaths1_view.setText(Integer.toString(deaths1));
-
     }
 
     /**

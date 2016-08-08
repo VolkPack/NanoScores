@@ -81,6 +81,7 @@
                     android:textAlignment="center"
                     android:id="@+id/Forts_string"
                     android:text="@string/forts"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -107,6 +108,7 @@
                     android:background="@drawable/icon_gradient"
                     android:src="@drawable/kills2_img"
                     android:layout_weight="2.86" />
+
                 <ImageView
                     android:layout_width="10dp"
                     android:layout_height="30dp"
@@ -114,6 +116,7 @@
                     android:src="@drawable/forts_img"
                     android:background="@drawable/icon_gradient"
                     android:layout_weight="20"/>
+
                 <ImageView
                     android:layout_width="10dp"
                     android:layout_height="30dp"
@@ -138,6 +141,7 @@
                     android:textSize="35sp"
                     android:layout_weight="50"
                     android:text="@string/default_score"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -147,6 +151,7 @@
                     android:textSize="35sp"
                     android:layout_weight="50"
                     android:text="@string/default_score"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -170,6 +175,7 @@
                     android:background="@color/transperent"
                     android:layout_weight="50"
                     android:onClick="addKillsTeamOne"/>
+
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -178,6 +184,7 @@
                     android:src="@drawable/add_one"
                     android:layout_weight="50"
                     android:onClick="addFortsTeamOne"/>
+
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -187,10 +194,6 @@
                     android:layout_weight="50"
                     android:onClick="addKillsTeamTwo"/>
             </LinearLayout>
-
-
-
-
         </LinearLayout>
 
         <LinearLayout
@@ -208,9 +211,9 @@
                 android:scaleType="fitCenter"
                 android:paddingTop="10dp"
                 android:src="@drawable/myinsanity_logo"
-
                 android:layout_gravity="center"
                 android:paddingBottom="10dp"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -221,6 +224,7 @@
                 android:textSize="25dp"
                 android:textColor="@color/team2_name"
                 android:paddingBottom="10dp"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -249,6 +253,7 @@
                     android:textAlignment="center"
                     android:id="@+id/Forts2_string"
                     android:text="@string/forts"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -275,6 +280,7 @@
                     android:src="@drawable/kills2_img"
                     android:background="@drawable/icon_gradient"
                     android:layout_weight="2.86" />
+
                 <ImageView
                     android:layout_width="10dp"
                     android:layout_height="30dp"
@@ -282,6 +288,7 @@
                     android:src="@drawable/forts_img"
                     android:layout_weight="20"
                     android:background="@drawable/icon_gradient"/>
+
                 <ImageView
                     android:layout_width="10dp"
                     android:layout_height="30dp"
@@ -289,7 +296,6 @@
                     android:src="@drawable/death2_img"
                     android:layout_weight="20"
                     android:background="@drawable/icon_gradient" />
-
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -302,11 +308,11 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/kills2_score"
                     android:textAlignment="center"
-                    
                     android:textColor="@color/kills"
                     android:textSize="35sp"
                     android:layout_weight="50"
                     android:text="@string/default_score"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -316,6 +322,7 @@
                     android:textSize="35sp"
                     android:layout_weight="50"
                     android:text="@string/default_score"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -339,6 +346,7 @@
                     android:background="@color/transperent"
                     android:layout_weight="50"
                     android:onClick="addKillsTeamTwo"/>
+
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -347,6 +355,7 @@
                     android:src="@drawable/add_one"
                     android:layout_weight="50"
                     android:onClick="addFortsTeamTwo"/>
+
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -356,7 +365,6 @@
                     android:layout_weight="50"
                     android:onClick="addKillsTeamOne"/>
             </LinearLayout>
-
         </LinearLayout>
     </LinearLayout>
     <Button
@@ -370,6 +378,7 @@
         android:textStyle="bold"
         android:text="@string/reset_button_string"
         android:onClick="resetScores"/>
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -387,5 +396,4 @@
         android:textSize="50dp"
         android:textStyle="bold"
         android:textAlignment="center"/>
-
 </RelativeLayout>
