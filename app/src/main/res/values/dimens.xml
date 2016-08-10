@@ -2,6 +2,8 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="score_desc_padding_bot">10sp</dimen>
-    <dimen name="grad">25dp</dimen>
+    <dimen name="score_desc_padding_bot">10dp</dimen>
+    <dimen name="grad">25sp</dimen>
+    <dimen name="victory">50sp</dimen>
+    <dimen name="scores">35sp</dimen>
 </resources>
